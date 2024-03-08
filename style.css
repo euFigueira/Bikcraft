@@ -1,0 +1,177 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffff;
+  --texto: #000000;
+  --subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url("./img/onda-clara.svg");
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111;
+    --fundo-2: #000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255,255, 255, 0.2);
+    --onda: url("./img/onda-escura.svg");
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  display: grid;
+  justify-items: center;
+  gap: 60px;
+  background-color: var(--fundo-1);
+  color: var(--texto);
+}
+
+header {
+  display: grid;
+  justify-items: center;
+  margin-top: 60px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+p {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--texto);
+  text-transform: uppercase;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+}
+
+.fit img {
+  object-fit: cover;
+  height: 100%;
+  object-position: top right;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 30px;
+  gap: 30px;
+}
+
+.menu li {
+  padding: 10px 20px;
+  background-color: var(--fundo-2);
+  border: 3px solid transparent;
+  color: var(--texto);
+}
+
+.conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+}
+
+.introducao {
+  display: grid;
+  text-align: right;
+  align-content: center;
+  justify-items: end;
+  gap: 20px;
+  padding: 40px;
+  background-color: var(--fundo-2);
+}
+
+.introducao h1 {
+  font-size: 2rem;
+}
+
+.subtitulo {
+  display: grid;
+  align-self: center;
+  text-align: end;
+  padding: 40px;
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: var(--subtitulo);
+  background-image: var(--onda);
+}
+
+.vantagens-itens {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 20px;
+  padding: 20px;
+  border-left: 4px solid transparent;
+}
+
+.vantagens-itens:hover {
+  border-left: 2px solid red;
+  transform: scale(1.03);
+}
+
+.vantagens-itens:nth-child(odd) {
+  background: var(--fundo-1);
+}
+
+.vantagens {
+  background-color: var(--fundo-2);
+  padding: 20px;
+}
+
+.vantagens-itens p {
+  grid-column: 2;
+}
+
+.botao {
+  place-content: end;
+  background: var(--cor-primaria);
+  padding: 10px 20px;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.botao:hover {
+  background: var(--cor-primaria-escura);
+}
+
+footer {
+  background-color: var(--fundo-2);
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 40px;
+  font-size: 20px;
+}
+
+.menu li:hover {
+  border: 3px solid var(--cor-primaria);
+}
+
+.vantagens .vantagens-itens:hover {
+  border-left: 4px solid var(cor--primaria);
+}
+
+@media (max-width: 800px) {
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+  .introducao {
+    justify-items: center;
+    text-align: center;
+  }
+  .subtitulo {
+    text-align: center;
+  }
+}
